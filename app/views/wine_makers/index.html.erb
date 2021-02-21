@@ -1,0 +1,23 @@
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1491924778227-f225b115dd5f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjF8fHdpbmV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60)">
+  Wine maker favorites
+</div>
+
+
+<div class="container d-flex">
+<div class="add-bottle">
+<h2> <%= link_to 'Add a wine maker', new_wine_maker_path%>
+</div>
+<div class="wine-container">
+<%@wine_makers.each do |wine_maker|%>
+
+<div class="wine-bottle">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="wine-bottle-infos">
+    <h2><%= link_to wine_maker.name, wine_maker_path(wine_maker) %></h2>
+    <p><em><%= wine_maker.country%></em></p>
+  </div>
+</div>
+
+<%end%>
+</div>
+</div>

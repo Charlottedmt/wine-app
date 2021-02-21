@@ -1,0 +1,29 @@
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1491924778227-f225b115dd5f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjF8fHdpbmV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60)">
+  Wine favorites
+</div>
+
+<div class="container d-flex">
+<div class="add-bottle">
+<h2> <%= link_to 'Add a bottle', new_bottle_path, class: "wine-button"%>
+<h2> <%= link_to 'Add a wine maker', new_wine_maker_path, class: "wine-button"%>
+</div>
+<div class="wine-container">
+<%@bottles.each do |bottle|%>
+
+<div class="wine-bottle">
+  <div class="wine-img-review">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="infos">
+        <h2><%= link_to bottle.name, bottle_path(bottle) %></h2>
+        <p><%= bottle.wine_maker.name%> <strong><%=bottle.wine_maker.country%></strong></p>
+      </div>
+      <div class="add-review">
+        <h2> <%= link_to 'Add a review', new_bottle_review_path(bottle), class: "wine-button"%>
+      </div>
+  </div>
+</div>
+
+<%end%>
+</div>
+</div>
+

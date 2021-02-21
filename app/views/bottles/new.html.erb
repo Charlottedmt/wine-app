@@ -1,0 +1,13 @@
+<div class="container">
+
+
+<%= simple_form_for [ @bottle] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :year %>
+  <%= f.input :grapes %>
+  <%= f.input :description %>
+  <%= f.association :wine_maker %>
+  <%= f.submit "Add this bottle", class: "btn btn-primary" %>
+<% end %>
+
+</div>
